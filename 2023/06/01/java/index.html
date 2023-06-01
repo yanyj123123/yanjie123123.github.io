@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yanyj123123.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="java">
+<meta property="og:url" content="https://yanyj123123.github.io/master/2023/06/01/java/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-01T12:10:32.000Z">
+<meta property="article:modified_time" content="2023-06-01T12:24:04.960Z">
+<meta property="article:author" content="GunTongXiYiJi">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yanyj123123.github.io/master/2023/06/01/java/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>java | MyBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MyBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yanyj123123.github.io/master/2023/06/01/java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="GunTongXiYiJi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-06-01 20:10:32 / 修改时间：20:24:04" itemprop="dateCreated datePublished" datetime="2023-06-01T20:10:32+08:00">2023-06-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">-java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+
+<h1 id="一-HashMap"><a href="#一-HashMap" class="headerlink" title="一.HashMap"></a>一.HashMap</h1><p>HashMap 是一个散列表，它存储的内容是键值(key-value)映射。<br>HashMap 的 key 与 value 类型可以相同也可以不同，根据定义，不受限制。</p>
+<h2 id="1-1-基础操作（增、删、改、查）"><a href="#1-1-基础操作（增、删、改、查）" class="headerlink" title="1.1 基础操作（增、删、改、查）"></a>1.1 基础操作（增、删、改、查）</h2><p>定义一个哈希表</p>
+<pre class="line-numbers language-none"><code class="language-none">HashMap&lt;Integer, String&gt; hashmap&#x3D; new HashMap&lt;Integer, String&gt;();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>添加键值对（key-value）（增）<br>hashmap.put(1, “string1”); &#x2F;&#x2F; 执行完后hash表内为{1&#x3D;string1}<br>hashmap.put(2, “string2”); &#x2F;&#x2F; 执行完后hash表内为{1&#x3D;string1, 2&#x3D;string2}<br>hashmap.put(2, “string2”); &#x2F;&#x2F; 执行完后hash表内为{1&#x3D;string1, 2&#x3D;string2, 3&#x3D;string3}</p>
+<p>根据key值访问value（查）<br>hashmap.get(1); &#x2F;&#x2F; 返回string1<br>hashmap.get(2); &#x2F;&#x2F; 返回string2<br>hashmap.get(3); &#x2F;&#x2F; 返回string3</p>
+<p>根据key值删除元素（删）<br>hashmap.remove(1); &#x2F;&#x2F; 执行完后hash表内为{2&#x3D;string2, 3&#x3D;string3}<br>hashmap.remove(2); &#x2F;&#x2F; 执行完后hash表内为{3&#x3D;string3}<br>hashmap.remove(3); &#x2F;&#x2F; 执行完后hash表内为{}<br>&#x2F;&#x2F; 删除所有键值对<br>hashmap.clear();</p>
+<p>替换 hashMap 中是指定的key对应的 value<br>hashmap.replace(key,value); &#x2F;&#x2F; 返回0</p>
+<p>返回hashmap中键值对的数量<br>hashmap.size(); &#x2F;&#x2F; 返回0</p>
+<p>getOrDefault(Object key, V defaultValue)<br>意思就是当Map集合中有这个key时，就使用这个key对应的value值，如果没有就使用默认值defaultValue；<br>hashmap.getOrDefault(key,defaultValue);</p>
+<p>entrySet() 方法可以与 for-each 循环一起使用，用来遍历迭代 HashMap 中每一个映射项<br>&#x2F;&#x2F; foreach循环</p>
+<pre class="line-numbers language-none"><code class="language-none">for(var entry : map.entrySet())&#123;
+    &#x2F;&#x2F; 获得key
+    int key &#x3D; entry.getKey();
+	&#x2F;&#x2F; 获得value
+	int value &#x3D; entry.getValue();
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="1-2其他操作"><a href="#1-2其他操作" class="headerlink" title="1.2其他操作"></a>1.2其他操作</h2><p>检查hashMap中是否存在指定的key对应的映射关系<br>hashmap.containsKey(key); </p>
+<p>检查hashMap中是否存在指定的value对应的映射关系<br>hashmap.containsValue(value); </p>
+<p>hashmap是否为空<br>hashmap.isEmpty(); </p>
+<p>HashMap.values() 方法<br>hashmap.values(); &#x2F;&#x2F; 返回所有Value值组成的集合<br>&#x2F;*<br>    如果有HashMap: {1&#x3D;Google, 2&#x3D;Runoob, 3&#x3D;Taobao}<br>    则返回Values: [Google, Runoob, Taobao]<br>*&#x2F;</p>
+<h1 id="2-HashSet"><a href="#2-HashSet" class="headerlink" title="2.HashSet"></a>2.HashSet</h1><p>HashSet是基于HashMap的一个不允许有重复元素的集合，但其中允许存在null值。</p>
+<h2 id="2-1-基础操作（增、删、改、查）"><a href="#2-1-基础操作（增、删、改、查）" class="headerlink" title="2.1 基础操作（增、删、改、查）"></a>2.1 基础操作（增、删、改、查）</h2><p>定义一个hashset</p>
+<pre class="line-numbers language-none"><code class="language-none">Set&lt;Integer&gt; hashset&#x3D; new HashSet&lt;Integer&gt;();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>添加值（增）<br>hashset.add(1);</p>
+<p>迭代存入元素</p>
+<pre class="line-numbers language-none"><code class="language-none">int[] nums &#x3D; new int[]&#123;1,2,3,4,5,6&#125;
+for(int x : nums) hash.add(x);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>判断元素是否存在<br>hashmap.contains(1);</p>
+<p>删除元素（删）<br>hashmap.remove(1);<br>&#x2F;&#x2F; 删除所有元素<br>hashmap.clear();</p>
+<h2 id="2-2-HashSet如何实现去重？"><a href="#2-2-HashSet如何实现去重？" class="headerlink" title="2.2 HashSet如何实现去重？"></a>2.2 HashSet如何实现去重？</h2><p>HashSet是通过HashCode()与equals()方法实现去重的。</p>
+<p>HashCode()的作用是对Java堆上的对象产生一个哈希码，用于确定该对象在哈希表中的索引位置，Java的任何类中都含有HashCode()。<br>equals()方法用于比较两个对象中存放的地址是否相等。<br>对象加入HashSet的过程：对象加入HashSet时，HashSet会计算对象的hashcode值来判断对象加入的位置，如果该位置没有值，则直接放入；如果有值，则HashSet通过equals()方法来检查两个对象是否相同，如果两者相同，则加入失败，否则将会重新散列到其他的地方。</p>
+<p>注意：</p>
+<p>两个对象相等，也就是适用于equals(java.lang.Object) 方法，那么这两个对象的hashCode一定要相等；<br>hashcode相等，两个对象不一定相等</p>
+<h1 id="二、字符串操作注意"><a href="#二、字符串操作注意" class="headerlink" title="二、字符串操作注意"></a>二、字符串操作注意</h1><p>substring函数使用 sunstring(i,j)为截取字符串，左闭右开</p>
+<p>整数转为字符串 String.valueof()</p>
+<p>字符串拼接时可以使用stringbuilder</p>
+<h1 id="三、java泛型-list"><a href="#三、java泛型-list" class="headerlink" title="三、java泛型 list"></a>三、java泛型 list</h1><p>定义：List&lt;类型&gt;名字&#x3D;new ArrayList&lt;&gt;()<br>作用：自动检查类型，取消类型转换<br>list.clear()清空集合但是其他引用该list也会被清空</p>
+<p>对list排序<br>collections.sort()&#x2F;&#x2F;默认降序</p>
+<h1 id="四、collections类"><a href="#四、collections类" class="headerlink" title="四、collections类"></a>四、collections类</h1><p>Java.util.Collections是一个集合工具类，用于操作LIst，Set，Map等集合。<br>Collections类提供了一系列的静态方法，可以实现对集合元素的排序，添加一些元素，随机排序，替换等操作。</p>
+<h1 id="五、java对数组排序"><a href="#五、java对数组排序" class="headerlink" title="五、java对数组排序"></a>五、java对数组排序</h1><p>arrays.sort()&#x2F;&#x2F;升序</p>
+<h1 id="六、java各接口"><a href="#六、java各接口" class="headerlink" title="六、java各接口"></a>六、java各接口</h1><p>|—-Collection接口：单列集合，用来存储一个一个的对象<br>|—-List接口：存储有序的、可重复的数据。 –&gt;“动态”数组<br>|—-ArrayList、LinkedList、Vector<br>|—-Set接口：存储无序的、不可重复的数据 –&gt;高中讲的“集合”<br>|—-HashSet、LinkedHashSet、TreeSet<br>|—-Map接口：双列集合，用来存储一对(key - value)一对的数据 –&gt;高中函数：y &#x3D; f(x)<br>|—-HashMap、LinkedHashMap、TreeMap、Hashtable、Properties</p>
+<h1 id="七、字符串操作"><a href="#七、字符串操作" class="headerlink" title="七、字符串操作"></a>七、字符串操作</h1><h2 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h2><p>String是不可变的，即一旦一个String对象被创建以后，包含在这个对象中的字符序列是不可改变的，直至这个对象被销毁。</p>
+<h2 id="2-StringBuffer"><a href="#2-StringBuffer" class="headerlink" title="2.StringBuffer"></a>2.StringBuffer</h2><p>StringBuffer对象则代表一个字符序列可变的字符串，当一个StringBuffer被创建以后，<br>通过StringBuffer提供的append()、insert()、reverse()、setCharAt()、setLength()等方法<br>可以改变这个字符串对象的字符序列。一旦通过StringBuffer生成了最终想要的字符串，<br>就可以调用它的toString()方法将其转换为一个String对象。<br>StringBuffer对象是一个字符序列可变的字符串，它没有重新生成一个对象，而且在原来的对象中可以连接新的字符串。</p>
+<h2 id="3-StringBuilder类也代表可变字符串对象。"><a href="#3-StringBuilder类也代表可变字符串对象。" class="headerlink" title="3.StringBuilder类也代表可变字符串对象。"></a>3.StringBuilder类也代表可变字符串对象。</h2><p>实际上，StringBuilder和StringBuffer基本相似，两个类的构造器和方法也基本相同。<br>不同的是：StringBuffer是线程安全的，而StringBuilder则没有实现线程安全功能，<br>所以性能略高。</p>
+<h2 id="4-Integer-parseInt（s）将字符串解析为整形"><a href="#4-Integer-parseInt（s）将字符串解析为整形" class="headerlink" title="4.Integer.parseInt（s）将字符串解析为整形"></a>4.Integer.parseInt（s）将字符串解析为整形</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/01/linux/" rel="prev" title="linux">
+      <i class="fa fa-chevron-left"></i> linux
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/06/01/java-web/" rel="next" title="java_web">
+      java_web <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-HashMap"><span class="nav-number">1.</span> <span class="nav-text">一.HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%EF%BC%88%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基础操作（增、删、改、查）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">1.2其他操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-HashSet"><span class="nav-number">2.</span> <span class="nav-text">2.HashSet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%EF%BC%88%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 基础操作（增、删、改、查）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-HashSet%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%8E%BB%E9%87%8D%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 HashSet如何实现去重？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%B3%A8%E6%84%8F"><span class="nav-number">3.</span> <span class="nav-text">二、字符串操作注意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81java%E6%B3%9B%E5%9E%8B-list"><span class="nav-number">4.</span> <span class="nav-text">三、java泛型 list</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81collections%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">四、collections类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81java%E5%AF%B9%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="nav-number">6.</span> <span class="nav-text">五、java对数组排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81java%E5%90%84%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.</span> <span class="nav-text">六、java各接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C"><span class="nav-number">8.</span> <span class="nav-text">七、字符串操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-String"><span class="nav-number">8.1.</span> <span class="nav-text">1.String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-StringBuffer"><span class="nav-number">8.2.</span> <span class="nav-text">2.StringBuffer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-StringBuilder%E7%B1%BB%E4%B9%9F%E4%BB%A3%E8%A1%A8%E5%8F%AF%E5%8F%98%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%E3%80%82"><span class="nav-number">8.3.</span> <span class="nav-text">3.StringBuilder类也代表可变字符串对象。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Integer-parseInt%EF%BC%88s%EF%BC%89%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E6%9E%90%E4%B8%BA%E6%95%B4%E5%BD%A2"><span class="nav-number">8.4.</span> <span class="nav-text">4.Integer.parseInt（s）将字符串解析为整形</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">GunTongXiYiJi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GunTongXiYiJi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
