@@ -145,6 +145,146 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yanyj123123.github.io/master/2023/05/22/first-post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/master/images/avatar.gif">
+      <meta itemprop="name" content="GunTongXiYiJi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/master/2023/05/22/first-post/" class="post-title-link" itemprop="url">瑞吉外卖笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-05-22 17:14:57" itemprop="dateCreated datePublished" datetime="2023-05-22T17:14:57+08:00">2023-05-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-01 18:38:42" itemprop="dateModified" datetime="2023-06-01T18:38:42+08:00">2023-06-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="所遇到的问题"><a href="#所遇到的问题" class="headerlink" title="所遇到的问题"></a>所遇到的问题</h2><h3 id="问题一：LONG类型精度丢失"><a href="#问题一：LONG类型精度丢失" class="headerlink" title="问题一：LONG类型精度丢失"></a>问题一：LONG类型精度丢失</h3><p>由于id是long类型，所以当根据id删除或者更新时候，由前端js传入的id值精度缺失(js的long类型长度为16位，java是18位)，所以导致后端查询不到数据。</p>
+<p><strong>解决</strong>：使用对象映射器:基于jackson将Java对象转为json，或者将json转为Java对象然后将long类型统一转为字符串类型</p>
+<p><strong>具体实现</strong>：</p>
+<h6 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h6><p>1.增加JacksonObjectMapper配置类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
+ * 对象映射器:基于jackson将Java对象转为json，或者将json转为Java对象
+ * 将JSON解析为Java对象的过程称为 [从JSON反序列化Java对象]
+ * 从Java对象生成JSON的过程称为 [序列化Java对象到JSON]
+ *&#x2F;
+public class JacksonObjectMapper extends ObjectMapper &#123;
+
+    public static final String DEFAULT_DATE_FORMAT &#x3D; &quot;yyyy-MM-dd&quot;;
+    public static final String DEFAULT_DATE_TIME_FORMAT &#x3D; &quot;yyyy-MM-dd HH:mm:ss&quot;;
+    public static final String DEFAULT_TIME_FORMAT &#x3D; &quot;HH:mm:ss&quot;;
+
+    public JacksonObjectMapper() &#123;
+        super();
+        &#x2F;&#x2F;收到未知属性时不报异常
+        this.configure(FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+        &#x2F;&#x2F;反序列化时，属性不存在的兼容处理
+        this.getDeserializationConfig().withoutFeatures(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        SimpleModule simpleModule &#x3D; new SimpleModule()
+                .addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)))
+                .addDeserializer(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)))
+                .addDeserializer(LocalTime.class, new LocalTimeDeserializer(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)))
+
+                .addSerializer(BigInteger.class, ToStringSerializer.instance)
+                .addSerializer(Long.class, ToStringSerializer.instance)
+                .addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)))
+                .addSerializer(LocalDate.class, new LocalDateSerializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)))
+                .addSerializer(LocalTime.class, new LocalTimeSerializer(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)));
+
+        &#x2F;&#x2F;注册功能模块 例如，可以添加自定义序列化器和反序列化器
+        this.registerModule(simpleModule);
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.扩展mvc框架的消息转换器webMvcConfig类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class WebMvcConfig extends WebMvcConfigurationSupport &#123;
+     &#x2F;**
+     * 设置静态资源映射，若添加静态资源映射，可能会导致静态资源无法访问
+     * @param registry
+     *&#x2F;
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) &#123;
+        log.info(&quot;开始进行静态资源映射...&quot;);
+        registry.addResourceHandler(&quot;&#x2F;static&#x2F;backend&#x2F;**&quot;).addResourceLocations(&quot;classpath:&#x2F;static&#x2F;backend&#x2F;&quot;);
+        registry.addResourceHandler(&quot;&#x2F;static&#x2F;front&#x2F;**&quot;).addResourceLocations(&quot;classpath:&#x2F;static&#x2F;front&#x2F;&quot;);
+        registry.addResourceHandler(&quot;&#x2F;**&quot;)
+                .addResourceLocations(&quot;classpath:&#x2F;resources&#x2F;&quot;)
+                .addResourceLocations(&quot;classpath:&#x2F;static&#x2F;&quot;);
+    &#125;
+    &#x2F;**
+    * @Author: 滚筒洗衣机
+    * @Description: 扩展mvc框架的消息转换器
+    * @DateTime: 2023-6-1 18:04
+    * @Params:
+    * @Return
+    *&#x2F;
+    @Override
+    protected void extendMessageConverters(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters) &#123;
+        &#x2F;&#x2F;创建新的消息转换器
+        MappingJackson2HttpMessageConverter messageConverter&#x3D;new MappingJackson2HttpMessageConverter();
+        &#x2F;&#x2F;设置对象转换器，底层使用jackson将java对象转为json
+        messageConverter.setObjectMapper(new JacksonObjectMapper());
+        converters.add(0,messageConverter);
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h6><p>在实体类相应字段如id字段上加</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@JsonFormat(shape&#x3D;JsonFormat.Shape.STRING)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://yanyj123123.github.io/master/2023/05/22/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,7 +316,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-24 15:15:33" itemprop="dateModified" datetime="2023-05-24T15:15:33+08:00">2023-05-24</time>
+                <time title="修改时间：2023-05-29 20:55:46" itemprop="dateModified" datetime="2023-05-29T20:55:46+08:00">2023-05-29</time>
               </span>
 
           
@@ -560,6 +700,20 @@ CREATE TABLE &#96;user&#96; (
 <p>表结构为</p>
 <img src="C:\Users\yj\AppData\Roaming\Typora\typora-user-images\image-20230524151517775.png" alt="image-20230524151517775" style="zoom:50%;" />
 
+<h5 id="3-创建maven项目"><a href="#3-创建maven项目" class="headerlink" title="3.创建maven项目"></a>3.创建maven项目</h5><h5 id="4-开发登陆接口"><a href="#4-开发登陆接口" class="headerlink" title="4.开发登陆接口"></a>4.开发登陆接口</h5><h5 id="5-设置登录拦截器"><a href="#5-设置登录拦截器" class="headerlink" title="5.设置登录拦截器"></a>5.设置登录拦截器</h5><h6 id="5-1-使用拦截器方法"><a href="#5-1-使用拦截器方法" class="headerlink" title="5.1 使用拦截器方法"></a>5.1 使用拦截器方法</h6><p>第一步：创建拦截器LoginCheckFilter</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@WebFilter(filterName &#x3D; &quot;LoginCheckFilter&quot;,urlPatterns &#x3D; &quot;&#x2F;*&quot;)
+public class LoginCheckFilter implements Filter &#123;
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123;
+        HttpServletRequest request &#x3D; (HttpServletRequest) servletRequest;
+        HttpServletResponse response &#x3D; (HttpServletResponse) servletResponse;
+        filterChain.doFilter(request,response);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第二步：application启动类添加包扫描注解</p>
+<pre class="line-numbers language-none"><code class="language-none">@ServletComponentScan<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
 
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -655,7 +809,7 @@ CREATE TABLE &#96;user&#96; (
       <div class="site-state-item site-state-posts">
           <a href="/master/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
