@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-06-01 18:38:42" itemprop="dateModified" datetime="2023-06-01T18:38:42+08:00">2023-06-01</time>
+                <time title="修改时间：2023-06-01 18:59:54" itemprop="dateModified" datetime="2023-06-01T18:59:54+08:00">2023-06-01</time>
               </span>
 
           
@@ -190,7 +190,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="所遇到的问题"><a href="#所遇到的问题" class="headerlink" title="所遇到的问题"></a>所遇到的问题</h2><h3 id="问题一：LONG类型精度丢失"><a href="#问题一：LONG类型精度丢失" class="headerlink" title="问题一：LONG类型精度丢失"></a>问题一：LONG类型精度丢失</h3><p>由于id是long类型，所以当根据id删除或者更新时候，由前端js传入的id值精度缺失(js的long类型长度为16位，java是18位)，所以导致后端查询不到数据。</p>
+          <hr>
+<h2 id="所遇到的问题"><a href="#所遇到的问题" class="headerlink" title="所遇到的问题"></a>所遇到的问题</h2><h3 id="问题一：LONG类型精度丢失"><a href="#问题一：LONG类型精度丢失" class="headerlink" title="问题一：LONG类型精度丢失"></a>问题一：LONG类型精度丢失</h3><p>由于id是long类型，所以当根据id删除或者更新时候，由前端js传入的id值精度缺失(js的long类型长度为16位，java是18位)，所以导致后端查询不到数据。</p>
 <p><strong>解决</strong>：使用对象映射器:基于jackson将Java对象转为json，或者将json转为Java对象然后将long类型统一转为字符串类型</p>
 <p><strong>具体实现</strong>：</p>
 <h6 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h6><p>1.增加JacksonObjectMapper配置类</p>
@@ -299,7 +300,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport &#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/master/2023/05/22/hello-world/" class="post-title-link" itemprop="url">Hello Word</a>
+            <a href="/master/2023/05/22/hello-world/" class="post-title-link" itemprop="url">瑞吉</a>
         </h2>
 
         <div class="post-meta">
@@ -316,7 +317,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport &#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-29 20:55:46" itemprop="dateModified" datetime="2023-05-29T20:55:46+08:00">2023-05-29</time>
+                <time title="修改时间：2023-06-01 18:59:49" itemprop="dateModified" datetime="2023-06-01T18:59:49+08:00">2023-06-01</time>
               </span>
 
           
@@ -330,7 +331,8 @@ public class WebMvcConfig extends WebMvcConfigurationSupport &#123;
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、<strong>准备工作</strong></h1><h5 id="1-所用技术栈"><a href="#1-所用技术栈" class="headerlink" title="1.所用技术栈"></a>1.所用技术栈</h5><p><img src="C:\Users\yj\AppData\Roaming\Typora\typora-user-images\image-20230524150940697.png" alt="image-20230524150940697"> </p>
+          <hr>
+<h1 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、<strong>准备工作</strong></h1><h5 id="1-所用技术栈"><a href="#1-所用技术栈" class="headerlink" title="1.所用技术栈"></a>1.所用技术栈</h5><p><img src="C:\Users\yj\AppData\Roaming\Typora\typora-user-images\image-20230524150940697.png" alt="image-20230524150940697"> </p>
 <h5 id="2-数据库建表"><a href="#2-数据库建表" class="headerlink" title="2.数据库建表"></a>2.数据库建表</h5><p>2.1 创建数据库</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">create database reggie<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
