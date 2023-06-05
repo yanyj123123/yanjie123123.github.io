@@ -23,16 +23,16 @@
   <meta name="description" content="所遇到的问题问题一：LONG类型精度丢失由于id是long类型，所以当根据id删除或者更新时候，由前端js传入的id值精度缺失(js的long类型长度为16位，java是18位)，所以导致后端查询不到数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="瑞吉外卖笔记">
-<meta property="og:url" content="https://yanyj123123.github.io/master/2023/05/22/reggie1/index.html">
+<meta property="og:url" content="https://yanyj123123.github.io/master/2023/05/22/reggiebiji/index.html">
 <meta property="og:site_name" content="MyBlog">
 <meta property="og:description" content="所遇到的问题问题一：LONG类型精度丢失由于id是long类型，所以当根据id删除或者更新时候，由前端js传入的id值精度缺失(js的long类型长度为16位，java是18位)，所以导致后端查询不到数据。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-22T09:14:57.464Z">
-<meta property="article:modified_time" content="2023-06-02T07:53:04.713Z">
+<meta property="article:modified_time" content="2023-06-05T09:26:20.670Z">
 <meta property="article:author" content="GunTongXiYiJi">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yanyj123123.github.io/master/2023/05/22/reggie1/">
+<link rel="canonical" href="https://yanyj123123.github.io/master/2023/05/22/reggiebiji/">
 
 
 <script id="page-configurations">
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yanyj123123.github.io/master/2023/05/22/reggie1/">
+    <link itemprop="mainEntityOfPage" href="https://yanyj123123.github.io/master/2023/05/22/reggiebiji/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-06-02 15:53:04" itemprop="dateModified" datetime="2023-06-02T15:53:04+08:00">2023-06-02</time>
+                <time title="修改时间：2023-06-05 17:26:20" itemprop="dateModified" datetime="2023-06-05T17:26:20+08:00">2023-06-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -208,8 +208,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2023/05/22/reggie1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2023/05/22/reggie1/" itemprop="commentCount"></span>
+    <a title="valine" href="/2023/05/22/reggiebiji/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/05/22/reggiebiji/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -305,6 +305,64 @@ public class WebMvcConfig extends WebMvcConfigurationSupport &#123;
 
 <h3 id="二、如何在url中携带参数"><a href="#二、如何在url中携带参数" class="headerlink" title="二、如何在url中携带参数"></a>二、如何在url中携带参数</h3><p>使用场景：如编辑时将id携带到编辑界面然后进行更新</p>
 <p>解决：使用注解@Pathvariable获取url中的参数，而接口需要使用类似于@Gettmapping(“&#x2F;{id}”)的括号表达式</p>
+<h2 id="三、如何通过mybatis-plus实现公共字段自动填充"><a href="#三、如何通过mybatis-plus实现公共字段自动填充" class="headerlink" title="三、如何通过mybatis-plus实现公共字段自动填充"></a>三、如何通过mybatis-plus实现公共字段自动填充</h2><ul>
+<li><p>使用场景：mybatis-plus公共字段自动填充，就是在插入或者更新的时候为指定字段赋予指定的值，避免了很多重复代码</p>
+</li>
+<li><p>实现步骤</p>
+<ol>
+<li><p>在实体类的属性上加入@tablefield注解，指定自定填充的策略</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@TableField(fill&#x3D;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>按照框架要求编写<strong>元数据对象处理器</strong>（就是一个类），在此类中实现一个metaobjecthandler接口，统一为公共字段赋值</p>
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+如何在metaobjecthandler接口实现类中获取所存放的session（因为不能直接从metaobjecthandler类中调用httpsession对象）？</p>
+</li>
+<li><p>可以使用ThreadLocal来解决，它是jdk提供的一个类，TheadLocal为每个线程提供一个单独的存储空间，只能在同一线程内取得对应的值，线程外则不能访问。</p>
+<ul>
+<li><input disabled="" type="checkbox"> 常用方法有public void set(T value)设置当前线程局部变量的值</li>
+<li><input disabled="" type="checkbox"> public get()获取当前线程局部变量的值</li>
+</ul>
+</li>
+<li><p>由于客户端每次发送的http请求，对应的在服务端都会分配一个新的线程来处理，有一些方法是属于相同的线程</p>
+</li>
+<li><p>所以可以使用在登录拦截器中获取登录当前登录用户id，调用threadlocal并存储当前的id，然后在metaobjecthandler接口类中获取此id。</p>
+</li>
+<li><p>实现步骤</p>
+<ol>
+<li><p>写一个工具类basecurrent，它是基于threadLocal的工具类，用于用户保存和获取当前登录用户id</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.yanjie.common;
+
+&#x2F;**
+* @Author: 滚筒洗衣机
+* @Description: 基于threadLocal的工具类，用于用户保存和获取当前登录用户id
+* @DateTime: 2023-6-5 17:17
+* @Params:
+* @Return
+*&#x2F;
+public class BaseContext &#123;
+    private static ThreadLocal&lt;Long&gt; threadLocal&#x3D;new ThreadLocal&lt;&gt;();
+    public static void setCurrentId(Long id)&#123;
+        threadLocal.set(id);
+    &#125;
+    public static Long getCurrentId(Long)&#123;
+        return threadLocal.get();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>登录拦截器里面设置保存登录用户empid</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">Long empId&#x3D;(Long) request.getSession().getAttribute(&quot;employee&quot;);
+BaseContext.setCurrentId(empId);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>metaobjecthandler接口类中获取empid</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">metaObject.setValue(&quot;createUser&quot;, BaseContext.getCurrentId());<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
 
     </div>
 
@@ -386,7 +444,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport &#123;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">所遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9ALONG%E7%B1%BB%E5%9E%8B%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1"><span class="nav-number">1.1.</span> <span class="nav-text">问题一：LONG类型精度丢失</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="nav-number">1.1.0.0.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E5%9C%A8url%E4%B8%AD%E6%90%BA%E5%B8%A6%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">二、如何在url中携带参数</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">所遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9ALONG%E7%B1%BB%E5%9E%8B%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1"><span class="nav-number">1.1.</span> <span class="nav-text">问题一：LONG类型精度丢失</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="nav-number">1.1.0.0.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E5%9C%A8url%E4%B8%AD%E6%90%BA%E5%B8%A6%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">二、如何在url中携带参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87mybatis-plus%E5%AE%9E%E7%8E%B0%E5%85%AC%E5%85%B1%E5%AD%97%E6%AE%B5%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85"><span class="nav-number">2.</span> <span class="nav-text">三、如何通过mybatis-plus实现公共字段自动填充</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -400,18 +458,18 @@ public class WebMvcConfig extends WebMvcConfigurationSupport &#123;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
