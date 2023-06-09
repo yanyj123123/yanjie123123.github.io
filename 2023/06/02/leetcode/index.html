@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="MyBlog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-02T01:37:35.000Z">
-<meta property="article:modified_time" content="2023-06-08T02:44:07.774Z">
+<meta property="article:modified_time" content="2023-06-09T09:16:36.228Z">
 <meta property="article:author" content="GunTongXiYiJi">
 <meta property="article:tag" content="-leetcode">
 <meta name="twitter:card" content="summary">
@@ -179,7 +179,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-06-08 10:44:07" itemprop="dateModified" datetime="2023-06-08T10:44:07+08:00">2023-06-08</time>
+                <time title="修改时间：2023-06-09 17:16:36" itemprop="dateModified" datetime="2023-06-09T17:16:36+08:00">2023-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,7 +251,7 @@
 <li><strong>确定终止条件：</strong> 写完了递归算法, 运行的时候，经常会遇到栈溢出的错误，就是没写终止条件或者终止条件写的不对，操作系统也是用一个栈的结构来保存每一层递归的信息，如果递归没有终止，操作系统的内存栈必然就会溢出。</li>
 <li><strong>确定单层递归的逻辑：</strong> 确定每一层递归需要处理的信息。在这里也就会重复调用自己来实现递归的过程。</li>
 </ol>
-<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><h3 id="1-递归法"><a href="#1-递归法" class="headerlink" title="1.递归法"></a>1.递归法</h3><h4 id="1-1-前序遍历"><a href="#1-1-前序遍历" class="headerlink" title="1.1 前序遍历"></a>1.1 前序遍历</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-preorder-traversal/">144. 二叉树的前序遍历</a></p>
+<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><h3 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h3><h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-preorder-traversal/">144. 二叉树的前序遍历</a></p>
 <!--more-->
 
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
@@ -277,7 +277,7 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="1-2-中序遍历"><a href="#1-2-中序遍历" class="headerlink" title="1.2 中序遍历"></a>1.2 中序遍历</h4><p> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-inorder-traversal/">94.二叉树的中序遍历</a></p>
+<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-inorder-traversal/">94.二叉树的中序遍历</a></p>
 <!--more-->
 
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
@@ -302,7 +302,7 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="1-3-后序遍历"><a href="#1-3-后序遍历" class="headerlink" title="1.3 后序遍历"></a>1.3 后序遍历</h4><p> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-postorder-traversal/"><strong><strong><strong>145.二叉树的后序遍历</strong></strong></strong></a></p>
+<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-postorder-traversal/"><strong><strong><strong>145.二叉树的后序遍历</strong></strong></strong></a></p>
 <!--more-->
 
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
@@ -330,8 +330,8 @@ class Solution &#123;
 
 
 
-<h3 id="2-迭代法"><a href="#2-迭代法" class="headerlink" title="2.迭代法"></a>2.迭代法</h3><p>通常是用<strong>栈</strong>来模拟递归</p>
-<h4 id="2-1-前序遍历"><a href="#2-1-前序遍历" class="headerlink" title="2.1 前序遍历"></a>2.1 前序遍历</h4><!--more-->
+<h3 id="迭代法"><a href="#迭代法" class="headerlink" title="迭代法"></a>迭代法</h3><p>通常是用<strong>栈</strong>来模拟递归</p>
+<h4 id="前序遍历-1"><a href="#前序遍历-1" class="headerlink" title="前序遍历"></a>前序遍历</h4><!--more-->
 
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
  * @Author: 滚筒洗衣机
@@ -362,7 +362,7 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2-2-中序遍历"><a href="#2-2-中序遍历" class="headerlink" title="2.2 中序遍历"></a>2.2 中序遍历</h4><!--more-->
+<h4 id="中序遍历-1"><a href="#中序遍历-1" class="headerlink" title="中序遍历"></a>中序遍历</h4><!--more-->
 
 <p>与前序和后序遍历不同，中序遍历需要使用一个指针来帮助访问结点，栈来存储已经访问过的结点，所以需要定义一个结点</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">TreeNode cur&#x3D;root;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -394,7 +394,7 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2-3-后序遍历"><a href="#2-3-后序遍历" class="headerlink" title="2.3 后序遍历"></a>2.3 后序遍历</h4><p>前序是左中右，后序是左右中，所以只需在前序遍历代码稍作修改，然后对列表进行反转即可</p>
+<h4 id="后序遍历-1"><a href="#后序遍历-1" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>前序是左中右，后序是左右中，所以只需在前序遍历代码稍作修改，然后对列表进行反转即可</p>
 <p>对列表进行翻转</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">Collections.reverse(result);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -424,7 +424,7 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="3-层序遍历（使用队列"><a href="#3-层序遍历（使用队列" class="headerlink" title="3. 层序遍历（使用队列)"></a>3. 层序遍历（使用队列)</h3><h4 id="3-1二叉树的层序遍历"><a href="#3-1二叉树的层序遍历" class="headerlink" title="3.1二叉树的层序遍历"></a>3.1<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-level-order-traversal/description/">二叉树的层序遍历</a></h4><p>二叉树的层序遍历其实就是图的广度优先搜索，需要使用队列来存储结点。下面是需要注意的地方</p>
+<h3 id="层序遍历（使用队列"><a href="#层序遍历（使用队列" class="headerlink" title="层序遍历（使用队列)"></a>层序遍历（使用队列)</h3><h4 id="二叉树的层序遍历"><a href="#二叉树的层序遍历" class="headerlink" title="二叉树的层序遍历"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-level-order-traversal/description/">二叉树的层序遍历</a></h4><p>二叉树的层序遍历其实就是图的广度优先搜索，需要使用队列来存储结点。下面是需要注意的地方</p>
 <ul>
 <li><p>为了记录某层的结点是否已经全部出队，需要记录每层结点个数。因为可能会出现不同层的结点在队列中，这样会出现混淆的情况。</p>
 </li>
@@ -464,10 +464,10 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h4 id="3-2-二叉树的层序遍历2"><a href="#3-2-二叉树的层序遍历2" class="headerlink" title="3.2 二叉树的层序遍历2"></a>3.2 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/description/">二叉树的层序遍历2</a></h4><p>从底向上遍历二叉树，不需要将此题想的过于复杂，可以直接将从上向下遍历后的集合进行倒序即可。</p>
+<h4 id="二叉树的层序遍历2"><a href="#二叉树的层序遍历2" class="headerlink" title="二叉树的层序遍历2"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/description/">二叉树的层序遍历2</a></h4><p>从底向上遍历二叉树，不需要将此题想的过于复杂，可以直接将从上向下遍历后的集合进行倒序即可。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">Collections.reverse(result);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="3-3-二叉树的右视图"><a href="#3-3-二叉树的右视图" class="headerlink" title="3.3 二叉树的右视图"></a>3.3 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-right-side-view">二叉树的右视图</a></h4><p>通过题目描述，自然的想到获取层次遍历的每一层最后一个元素即可。所以只需要在层次遍历的代码上面微调即可。</p>
+<h4 id="二叉树的右视图"><a href="#二叉树的右视图" class="headerlink" title="二叉树的右视图"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-right-side-view">二叉树的右视图</a></h4><p>通过题目描述，自然的想到获取层次遍历的每一层最后一个元素即可。所以只需要在层次遍历的代码上面微调即可。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
  * @Author: 滚筒洗衣机
  * @Date: 2023-06-08 09:36:12
@@ -502,7 +502,7 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="3-4-二叉树每层的平均值"><a href="#3-4-二叉树每层的平均值" class="headerlink" title="3.4 二叉树每层的平均值"></a>3.4 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/average-of-levels-in-binary-tree">二叉树每层的平均值</a></h4><p>同样是层次遍历代码的修改即可，但是需要注意精度问题。</p>
+<h4 id="二叉树每层的平均值"><a href="#二叉树每层的平均值" class="headerlink" title="二叉树每层的平均值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/average-of-levels-in-binary-tree">二叉树每层的平均值</a></h4><p>同样是层次遍历代码的修改即可，但是需要注意精度问题。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
  * @Author: 滚筒洗衣机
  * @Date: 2023-06-08 10:22:36
@@ -537,7 +537,156 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="3-5-在每个树行中找最大值"><a href="#3-5-在每个树行中找最大值" class="headerlink" title="3.5 在每个树行中找最大值"></a>3.5 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-largest-value-in-each-tree-row/description/">在每个树行中找最大值</a></h4><h4 id="3-6-N叉树的层序遍历"><a href="#3-6-N叉树的层序遍历" class="headerlink" title="3.6 N叉树的层序遍历"></a>3.6 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-ary-tree-level-order-traversal/">N叉树的层序遍历</a></h4><h1 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h1><h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h1 id="leetcode周赛"><a href="#leetcode周赛" class="headerlink" title="leetcode周赛"></a>leetcode周赛</h1><h2 id="第348场"><a href="#第348场" class="headerlink" title="第348场"></a>第348场</h2><h5 id="第一题-最小化字符串长度"><a href="#第一题-最小化字符串长度" class="headerlink" title="第一题 最小化字符串长度"></a>第一题 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimize-string-length/">最小化字符串长度</a></h5><p>此题难度不大，其实就是消除相同字母，然后只留一个。可以使用数组或者hashmap作为数据结构来进行存储。</p>
+<h4 id="在每个树行中找最大值"><a href="#在每个树行中找最大值" class="headerlink" title="在每个树行中找最大值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-largest-value-in-each-tree-row/description/">在每个树行中找最大值</a></h4><h4 id="N叉树的层序遍历"><a href="#N叉树的层序遍历" class="headerlink" title="N叉树的层序遍历"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-ary-tree-level-order-traversal/">N叉树的层序遍历</a></h4><h3 id="翻转二叉树"><a href="#翻转二叉树" class="headerlink" title="翻转二叉树"></a>翻转二叉树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/invert-binary-tree/">226.翻转二叉树</a> 并不是结点数值的交换，而是结点指针的交换。所以只需要把每个节点的孩子节点交换一下即可。</p>
+<h4 id="递归法-1"><a href="#递归法-1" class="headerlink" title="递归法"></a>递归法</h4><p>首先选择遍历顺序，最好使用前序和后序。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
+ * @Author: 滚筒洗衣机
+ * @Date: 2023-06-09 10:03:33
+ * @description: 递归法前序翻转二叉树
+ * @return &#123;*&#125;
+ *&#x2F;
+class Solution &#123;
+    public TreeNode invert(TreeNode root)&#123;
+        if(root&#x3D;&#x3D;null)&#123;
+            return null;
+        &#125;
+        &#x2F;&#x2F;中
+        TreeNode node&#x3D; root.left;
+        root.left&#x3D;root.right;
+        root.right&#x3D;node;
+        &#x2F;&#x2F;左
+        invert(root.left);
+        &#x2F;&#x2F;右
+        invert(root.right);
+        return root;
+    &#125;
+    public TreeNode invertTree(TreeNode root) &#123;
+        return invert(root);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果使用后序的话，交换一下位置即可</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;左
+invert(root.left);
+&#x2F;&#x2F;右
+invert(root.right);
+&#x2F;&#x2F;中
+TreeNode node&#x3D; root.left;
+root.left&#x3D;root.right;
+root.right&#x3D;node;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>但是如果使用中序的话，会出现左子树被交换了两次，而右子树并没有被交换</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">      &#x2F;&#x2F;左
+      invert(root.left);
+&#x2F;&#x2F;中
+      TreeNode node&#x3D; root.left;
+      root.left&#x3D;root.right;
+      root.right&#x3D;node;
+      &#x2F;&#x2F;右,需要修改为left
+      invert(root.left);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="迭代法-1"><a href="#迭代法-1" class="headerlink" title="迭代法"></a>迭代法</h4><h4 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
+ * @Author: 滚筒洗衣机
+ * @Date: 2023-06-09 10:31:13
+ * @description: 层序遍历翻转二叉树
+ * @return &#123;*&#125;
+ *&#x2F;
+class Solution &#123;
+    public TreeNode invertTree(TreeNode root) &#123;
+        Queue&lt;TreeNode&gt;queue&#x3D;new ArrayDeque&lt;&gt;();
+        if(root!&#x3D;null)&#123;
+            queue.add(root);
+        &#125;
+        while(!queue.isEmpty())&#123;
+            int size&#x3D;queue.size();
+            for(int i&#x3D;0;i&lt;size;i++)&#123;
+                TreeNode node&#x3D;queue.poll();
+                TreeNode temp&#x3D;node.left;
+                node.left&#x3D;node.right;
+                node.right&#x3D;temp;
+                if(node.left!&#x3D;null)&#123;
+                    queue.add(node.left);
+                &#125;
+                if(node.right!&#x3D;null)&#123;
+                    queue.add(node.right);
+                &#125;
+            &#125;
+        &#125;
+        return root;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="对称二叉树"><a href="#对称二叉树" class="headerlink" title="对称二叉树"></a>对称二叉树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/">101. 对称二叉树</a></p>
+<p>主要是判断二叉树的外侧结点是否相等，内侧节点是否相等。使用类后序，因为后序相当于回溯。</p>
+<ol>
+<li><p>确定递归返回值以及递归参数</p>
+<p>因为需要判断左结点和右节点是否相等，所以返回为bool类型，以及参数为左节点和右节点。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public boolean compare(TreeNode left,TreeNode right)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>确定返回条件</p>
+<p>一个为空，一个不为空，就代表不对称，就返回false；都为空返回true；都不为空但是值不相等就返回fasle；</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">if(left&#x3D;&#x3D;null&amp;&amp;right&#x3D;&#x3D;null)&#123;
+           return true;
+       &#125;
+       else if(left&#x3D;&#x3D;null&amp;&amp;right!&#x3D;null)&#123;
+           return false;
+       &#125;
+       else if(left!&#x3D;null&amp;&amp;right&#x3D;&#x3D;null)&#123;
+           return false;
+       &#125;
+       else if(left.val!&#x3D;right.val)&#123;
+           return false;
+       &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+<li><p>确定单层递归的逻辑</p>
+<p>需要分开遍历外层和内层，只要有一个不符合条件，就返回fasle；</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">else&#123;
+    		&#x2F;&#x2F;外层
+            Boolean outside&#x3D;compare(left.left, right.right);
+    		&#x2F;&#x2F;内层
+            Boolean inside&#x3D;compare(left.right, right.left);
+            return outside&amp;&amp;inside;
+        &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<p>代码如下</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
+ * @Author: 滚筒洗衣机
+ * @Date: 2023-06-09 11:20:47
+ * @description: 类似后序对称二叉树
+ * @return &#123;*&#125;
+ *&#x2F;
+class Solution &#123;
+    public boolean compare(TreeNode left,TreeNode right)&#123;
+        if(left&#x3D;&#x3D;null&amp;&amp;right&#x3D;&#x3D;null)&#123;
+            return true;
+        &#125;
+        else if(left&#x3D;&#x3D;null&amp;&amp;right!&#x3D;null)&#123;
+            return false;
+        &#125;
+        else if(left!&#x3D;null&amp;&amp;right&#x3D;&#x3D;null)&#123;
+            return false;
+        &#125;
+        else if(left.val!&#x3D;right.val)&#123;
+            return false;
+        &#125;
+        else&#123;
+            Boolean outside&#x3D;compare(left.left, right.right);
+            Boolean inside&#x3D;compare(left.right, right.left);
+            return outside&amp;&amp;inside;
+        &#125;
+    &#125;
+    public boolean isSymmetric(TreeNode root) &#123;
+        return compare(root.left, root.right);
+
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h1><h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h1 id="leetcode周赛"><a href="#leetcode周赛" class="headerlink" title="leetcode周赛"></a>leetcode周赛</h1><h2 id="第348场"><a href="#第348场" class="headerlink" title="第348场"></a>第348场</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-348/">周赛第348场leetcode链接</a></p>
+<h4 id="第一题-最小化字符串长度"><a href="#第一题-最小化字符串长度" class="headerlink" title="第一题 最小化字符串长度"></a>第一题 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimize-string-length/">最小化字符串长度</a></h4><p>此题难度不大，其实就是消除相同字母，然后只留一个。可以使用数组或者hashmap作为数据结构来进行存储。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
 * @Author: 滚筒洗衣机
 * @Description: leetcode周赛第三百348场 2716
@@ -568,7 +717,7 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="第二题-半有序化排列"><a href="#第二题-半有序化排列" class="headerlink" title="第二题 半有序化排列"></a>第二题 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/semi-ordered-permutation/">半有序化排列</a></h5><p>此题也是简单题，不涉及任何算法，主要就是数学推导公式，需要注意的是分类讨论，即最大的数和最小的数字的位置先后不同，计算方式也不同</p>
+<h4 id="第二题-半有序化排列"><a href="#第二题-半有序化排列" class="headerlink" title="第二题 半有序化排列"></a>第二题 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/semi-ordered-permutation/">半有序化排列</a></h4><p>此题也是简单题，不涉及任何算法，主要就是数学推导公式，需要注意的是分类讨论，即最大的数和最小的数字的位置先后不同，计算方式也不同</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;**
 * @Author: 滚筒洗衣机
 * @Description: leetcode周赛第三百348场 2717
@@ -608,7 +757,7 @@ class Solution &#123;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="第二题-查询后矩阵的和"><a href="#第二题-查询后矩阵的和" class="headerlink" title="第二题 查询后矩阵的和"></a>第二题 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-matrix-after-queries/">查询后矩阵的和</a></h5><p>此题难度较大，通过率较低，但是题目相对简单，主要是按照普通暴力破解法会导致提交用例超时。</p>
+<h4 id="第二题-查询后矩阵的和"><a href="#第二题-查询后矩阵的和" class="headerlink" title="第二题 查询后矩阵的和"></a>第二题 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-matrix-after-queries/">查询后矩阵的和</a></h4><p>此题难度较大，通过率较低，但是题目相对简单，主要是按照普通暴力破解法会导致提交用例超时。</p>
 <ul>
 <li><p>首先第一个需要注意的地方是由于后面的数组会覆盖前面的数字，所以只需要从后向前遍历，对于已经赋值的位置不再赋值（因为从后向前，第一次赋值极为最终的值）</p>
 </li>
@@ -651,6 +800,8 @@ class Solution &#123;
             return sum;
         &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="第347场"><a href="#第347场" class="headerlink" title="第347场"></a>第347场</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-347/">周赛第347场leetcode链接</a></p>
 
     </div>
 
@@ -735,7 +886,7 @@ class Solution &#123;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">双指针法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97"><span class="nav-number">6.</span> <span class="nav-text">栈和队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">7.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="nav-number">7.1.</span> <span class="nav-text">二叉树基本知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">7.2.</span> <span class="nav-text">小技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.</span> <span class="nav-text">二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%80%92%E5%BD%92%E6%B3%95"><span class="nav-number">7.3.1.</span> <span class="nav-text">1.递归法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.1.1.</span> <span class="nav-text">1.1 前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.1.2.</span> <span class="nav-text">1.2 中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.1.3.</span> <span class="nav-text">1.3 后序遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="nav-number">7.3.2.</span> <span class="nav-text">2.迭代法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.2.1.</span> <span class="nav-text">2.1 前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.2.2.</span> <span class="nav-text">2.2 中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.2.3.</span> <span class="nav-text">2.3 后序遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97"><span class="nav-number">7.3.3.</span> <span class="nav-text">3. 层序遍历（使用队列)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.3.1.</span> <span class="nav-text">3.1二叉树的层序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%862"><span class="nav-number">7.3.3.2.</span> <span class="nav-text">3.2 二叉树的层序遍历2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B3%E8%A7%86%E5%9B%BE"><span class="nav-number">7.3.3.3.</span> <span class="nav-text">3.3 二叉树的右视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-%E4%BA%8C%E5%8F%89%E6%A0%91%E6%AF%8F%E5%B1%82%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="nav-number">7.3.3.4.</span> <span class="nav-text">3.4 二叉树每层的平均值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-%E5%9C%A8%E6%AF%8F%E4%B8%AA%E6%A0%91%E8%A1%8C%E4%B8%AD%E6%89%BE%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">7.3.3.5.</span> <span class="nav-text">3.5 在每个树行中找最大值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6-N%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.3.6.</span> <span class="nav-text">3.6 N叉树的层序遍历</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">回溯算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="nav-number">9.</span> <span class="nav-text">贪心算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">10.</span> <span class="nav-text">动态规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%A0%88"><span class="nav-number">11.</span> <span class="nav-text">单调栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">12.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode%E5%91%A8%E8%B5%9B"><span class="nav-number">13.</span> <span class="nav-text">leetcode周赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC348%E5%9C%BA"><span class="nav-number">13.1.</span> <span class="nav-text">第348场</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98-%E6%9C%80%E5%B0%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="nav-number">13.1.0.0.1.</span> <span class="nav-text">第一题 最小化字符串长度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98-%E5%8D%8A%E6%9C%89%E5%BA%8F%E5%8C%96%E6%8E%92%E5%88%97"><span class="nav-number">13.1.0.0.2.</span> <span class="nav-text">第二题 半有序化排列</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98-%E6%9F%A5%E8%AF%A2%E5%90%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E5%92%8C"><span class="nav-number">13.1.0.0.3.</span> <span class="nav-text">第二题 查询后矩阵的和</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">双指针法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97"><span class="nav-number">6.</span> <span class="nav-text">栈和队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">7.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="nav-number">7.1.</span> <span class="nav-text">二叉树基本知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">7.2.</span> <span class="nav-text">小技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.</span> <span class="nav-text">二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%B3%95"><span class="nav-number">7.3.1.</span> <span class="nav-text">递归法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.1.1.</span> <span class="nav-text">前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.1.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.1.3.</span> <span class="nav-text">后序遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="nav-number">7.3.2.</span> <span class="nav-text">迭代法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86-1"><span class="nav-number">7.3.2.1.</span> <span class="nav-text">前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86-1"><span class="nav-number">7.3.2.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86-1"><span class="nav-number">7.3.2.3.</span> <span class="nav-text">后序遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97"><span class="nav-number">7.3.3.</span> <span class="nav-text">层序遍历（使用队列)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.3.1.</span> <span class="nav-text">二叉树的层序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%862"><span class="nav-number">7.3.3.2.</span> <span class="nav-text">二叉树的层序遍历2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B3%E8%A7%86%E5%9B%BE"><span class="nav-number">7.3.3.3.</span> <span class="nav-text">二叉树的右视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E6%AF%8F%E5%B1%82%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="nav-number">7.3.3.4.</span> <span class="nav-text">二叉树每层的平均值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%AF%8F%E4%B8%AA%E6%A0%91%E8%A1%8C%E4%B8%AD%E6%89%BE%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">7.3.3.5.</span> <span class="nav-text">在每个树行中找最大值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.3.6.</span> <span class="nav-text">N叉树的层序遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">7.3.4.</span> <span class="nav-text">翻转二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%B3%95-1"><span class="nav-number">7.3.4.1.</span> <span class="nav-text">递归法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%B3%95-1"><span class="nav-number">7.3.4.2.</span> <span class="nav-text">迭代法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.4.3.</span> <span class="nav-text">层序遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">7.3.5.</span> <span class="nav-text">对称二叉树</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">回溯算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="nav-number">9.</span> <span class="nav-text">贪心算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">10.</span> <span class="nav-text">动态规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%A0%88"><span class="nav-number">11.</span> <span class="nav-text">单调栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">12.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode%E5%91%A8%E8%B5%9B"><span class="nav-number">13.</span> <span class="nav-text">leetcode周赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC348%E5%9C%BA"><span class="nav-number">13.1.</span> <span class="nav-text">第348场</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98-%E6%9C%80%E5%B0%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="nav-number">13.1.0.1.</span> <span class="nav-text">第一题 最小化字符串长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98-%E5%8D%8A%E6%9C%89%E5%BA%8F%E5%8C%96%E6%8E%92%E5%88%97"><span class="nav-number">13.1.0.2.</span> <span class="nav-text">第二题 半有序化排列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98-%E6%9F%A5%E8%AF%A2%E5%90%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E5%92%8C"><span class="nav-number">13.1.0.3.</span> <span class="nav-text">第二题 查询后矩阵的和</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC347%E5%9C%BA"><span class="nav-number">13.2.</span> <span class="nav-text">第347场</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
